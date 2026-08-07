@@ -21,7 +21,7 @@ const Login = () => {
   };
 
   return (
-    <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-8 items-center bg-[#080808] rounded-[24px] p-6 lg:p-12 shadow-2xl">
+    <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-8 items-center bg-[#18181B] border border-zinc-800 rounded-[24px] p-6 lg:p-12 shadow-2xl">
       {/* Left Form Section */}
       <div className="space-y-8 max-w-md mx-auto w-full">
         {/* Brand Logo */}
@@ -59,7 +59,6 @@ const Login = () => {
             onChange={(e) => setEmail(e.target.value)}
             placeholder="name@company.com"
             required
-            className="bg-[#1a1a1a] border border-[#414040]"
           />
 
           <Input
@@ -70,7 +69,6 @@ const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
             placeholder="••••••••"
             required
-            className="bg-[#1a1a1a] border border-[#414040]"
           />
 
           <div className="flex items-center justify-between text-xs">

@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-primary: #FFFFFF;
+    --color-accent: #FFFFFF;
+    --color-bg: #09090B;
+    --color-sidebar: #09090B;
+    --color-cards: #18181B;
+    --color-text-main: #FAFAFA;
+    --color-text-secondary: #A1A1AA;
+    --color-border: rgba(255, 255, 255, 0.12);
+    --radius-main: 14px;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: #09090B;
+    color: #FAFAFA;
+  }
+}
+
+/* Custom Scrollbar - Monochrome */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #09090B;
+}
+::-webkit-scrollbar-thumb {
+  background: #27272A;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3F3F46;
+}
+
+/* Custom Panels & Glass Utilities - Monochrome Black & White */
+.glass-panel {
+  background: rgba(24, 24, 27, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.glass-card {
+  background: #18181B;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.6);
+}
+
+.glow-white {
+  box-shadow: 0 0 25px -5px rgba(255, 255, 255, 0.15);
+}
+
+.border-subtle {
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+/* Pulse animation for node connectors */
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 3s infinite ease-in-out;
+}

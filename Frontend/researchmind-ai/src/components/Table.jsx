@@ -26,40 +26,39 @@ const Table = ({ columns, data, searchKey = 'topic', onRowClick = null }) => {
             icon={Search}
             placeholder="Filter research records..."
             value={searchTerm}
-            className="bg-[#1e1d1dbf] border-[#2b2b2b] outline outline-[#272626]"
             onChange={(e) => {
               setSearchTerm(e.target.value);
               setCurrentPage(1);
             }}
           />
         </div>
-        <div className="text-xs text-slate-400 self-end sm:self-auto">
-          Showing <span className="font-medium text-slate-200">{filteredData.length}</span> results
+        <div className="text-xs text-zinc-400 self-end sm:self-auto">
+          Showing <span className="font-medium text-white">{filteredData.length}</span> results
         </div>
       </div>
 
       {/* Table Container */}
-      <div className="w-full overflow-x-auto rounded-[14px] border border-[#252525] bg-[#030303] shadow-lg">
+      <div className="w-full overflow-x-auto rounded-[14px] border border-zinc-800 bg-[#18181B] shadow-lg">
         <table className="w-full text-left border-collapse">
           <thead>
-            <tr className="border-b border-[#252525] bg-[#030303] text-xs font-semibold uppercase tracking-wider text-slate-400">
+            <tr className="border-b border-zinc-800 bg-[#09090B] text-xs font-semibold uppercase tracking-wider text-zinc-400">
               {columns.map((col, idx) => (
                 <th key={idx} className={`py-3.5 px-4 ${col.className || ''}`}>
-                  <div className="flex items-center gap-1.5 cursor-pointer hover:text-slate-200">
+                  <div className="flex items-center gap-1.5 cursor-pointer hover:text-white">
                     <span>{col.header}</span>
-                    {col.sortable && <ArrowUpDown className="w-3 h-3 text-slate-500" />}
+                    {col.sortable && <ArrowUpDown className="w-3 h-3 text-zinc-500" />}
                   </div>
                 </th>
               ))}
             </tr>
           </thead>
-          <tbody className="divide-y divide-[#252525] text-sm text-slate-200">
+          <tbody className="divide-y divide-zinc-800 text-sm text-zinc-200">
             {currentData.length > 0 ? (
               currentData.map((row, rowIdx) => (
                 <tr
                   key={row.id || rowIdx}
                   onClick={() => onRowClick && onRowClick(row)}
-                  className={`transition-colors hover:bg-[#25252594] ${
+                  className={`transition-colors hover:bg-zinc-800/80 ${
                     onRowClick ? 'cursor-pointer' : ''
                   }`}
                 >
@@ -72,7 +71,7 @@ const Table = ({ columns, data, searchKey = 'topic', onRowClick = null }) => {
               ))
             ) : (
               <tr>
-                <td colSpan={columns.length} className="text-center py-8 text-slate-400">
+                <td colSpan={columns.length} className="text-center py-8 text-zinc-400">
                   No matching records found.
                 </td>
               </tr>
@@ -84,21 +83,21 @@ const Table = ({ columns, data, searchKey = 'topic', onRowClick = null }) => {
       {/* Pagination Controls */}
       {totalPages > 1 && (
         <div className="flex items-center justify-between pt-2">
-          <div className="text-xs text-slate-400">
+          <div className="text-xs text-zinc-400">
             Page {currentPage} of {totalPages}
           </div>
           <div className="flex items-center gap-2">
             <button
               disabled={currentPage === 1}
               onClick={() => setCurrentPage((p) => Math.max(p - 1, 1))}
-              className="p-2 rounded-lg bg-slate-800 border border-slate-700/60 text-slate-300 hover:text-white disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer"
+              className="p-2 rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-300 hover:text-white disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer"
             >
               <ChevronLeft className="w-4 h-4" />
             </button>
             <button
               disabled={currentPage === totalPages}
               onClick={() => setCurrentPage((p) => Math.min(p + 1, totalPages))}
-              className="p-2 rounded-lg bg-slate-800 border border-slate-700/60 text-slate-300 hover:text-white disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer"
+              className="p-2 rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-300 hover:text-white disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer"
             >
               <ChevronRight className="w-4 h-4" />
             </button>

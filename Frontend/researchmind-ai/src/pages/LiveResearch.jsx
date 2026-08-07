@@ -1,20 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useNavigate } from 'react_router-dom';
 import { motion } from 'framer-motion';
 import {
   Activity,
   Globe,
   BookOpen,
-  CheckCircle2,
-  Cpu,
   Terminal,
   FileText,
   Pause,
   Play,
-  RefreshCw,
-  ArrowRight,
-  ExternalLink,
-  ShieldCheck,
 } from 'lucide-react';
 import GithubIcon from '../components/GithubIcon';
 import { useResearch } from '../context/ResearchContext';
@@ -24,12 +18,11 @@ import Loader from '../components/Loader';
 
 const LiveResearch = () => {
   const navigate = useNavigate();
-  const { activeResearch, liveSteps } = useResearch();
+  const { activeResearch } = useResearch();
   const [isPaused, setIsPaused] = useState(false);
-  const [activeTab, setActiveTab] = useState('timeline');
 
   // Simulated live console log entries
-  const [consoleLogs, setConsoleLogs] = useState([
+  const [consoleLogs] = useState([
     '[12:44:00] INFO: Initialized 8-node cognitive agent swarm.',
     '[12:44:05] PLANNER: Decomposed topic into 6 targeted research sub-vectors.',
     '[12:44:12] SEARCH: Querying Google & Bing API... 42 URLs retrieved.',
@@ -62,17 +55,17 @@ const LiveResearch = () => {
   return (
     <div className="w-full space-y-6 pb-12">
       {/* Header Banner */}
-      <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 p-6 rounded-[20px] bg-[#050505] border border-[#454545] shadow-2xl backdrop-blur-md">
+      <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 p-6 rounded-[20px] bg-[#18181B] border border-zinc-800 shadow-2xl">
         <div className="space-y-1.5">
           <div className="flex items-center gap-2">
             <Badge variant="cyan" glow icon={Activity}>
               Autonomous Agent Live Console
             </Badge>
-            <span className="text-xs text-[#7f7d7d] font-mono">Run ID: #res_99847</span>
+            <span className="text-xs text-zinc-400 font-mono">Run ID: #res_99847</span>
           </div>
-          <h1 className="text-xl md:text-2xl font-bold text-slate-100">{activeResearch.topic}</h1>
-          <p className="text-xs text-slate-400">
-            Goal: <span className="text-slate-200 font-semibold">{activeResearch.goal}</span> • Depth: <span className="text-cyan-400 font-semibold">{activeResearch.depth}</span>
+          <h1 className="text-xl md:text-2xl font-bold text-white">{activeResearch.topic}</h1>
+          <p className="text-xs text-zinc-400">
+            Goal: <span className="text-white font-semibold">{activeResearch.goal}</span> • Depth: <span className="text-zinc-200 font-semibold">{activeResearch.depth}</span>
           </p>
         </div>
 
@@ -102,12 +95,12 @@ const LiveResearch = () => {
         {/* LEFT COLUMN: Timeline & Discovery Cards */}
         <div className="lg:col-span-7 space-y-6">
           {/* Animated Loader Header */}
-          <div className="p-6 rounded-[20px] bg-[#171717] border border-[#383838] shadow-xl flex items-center justify-between">
+          <div className="p-6 rounded-[20px] bg-[#18181B] border border-zinc-800 shadow-xl flex items-center justify-between">
             <div className="flex items-center gap-4">
               <Loader size="sm" text="" />
               <div>
-                <h3 className="text-sm font-bold text-slate-100">Swarm Executive Planner Running</h3>
-                <p className="text-xs text-[#9e9c9c]">Executing Step 6 of 8: Data Analysis & Graph Matrix</p>
+                <h3 className="text-sm font-bold text-white">Swarm Executive Planner Running</h3>
+                <p className="text-xs text-zinc-400">Executing Step 6 of 8: Data Analysis & Graph Matrix</p>
               </div>
             </div>
             <Badge variant="success" glow>
@@ -118,54 +111,54 @@ const LiveResearch = () => {
           {/* Live Discovery Cards Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {/* Scanned Websites */}
-            <div className="p-4 rounded-xl bg-[#080808] border border-[#515050] space-y-3">
-              <div className="flex items-center justify-between text-xs border-b border-slate-800 pb-2">
-                <span className="font-bold text-slate-200 flex items-center gap-1.5">
+            <div className="p-4 rounded-xl bg-[#09090B] border border-zinc-800 space-y-3">
+              <div className="flex items-center justify-between text-xs border-b border-zinc-800 pb-2">
+                <span className="font-bold text-zinc-200 flex items-center gap-1.5">
                   <Globe className="w-3.5 h-3.5 text-white" /> Scanned Web
                 </span>
-                <span className="text-[10px] text-cyan-400 font-mono">4 URLs</span>
+                <span className="text-[10px] text-zinc-400 font-mono">4 URLs</span>
               </div>
               <div className="space-y-2">
                 {websitesScanned.map((web, idx) => (
                   <div key={idx} className="text-[11px] flex items-center justify-between">
-                    <span className="text-slate-300 truncate max-w-25">{web.title}</span>
-                    <span className="text-[10px] text-emerald-400 font-mono">{web.score}</span>
+                    <span className="text-zinc-300 truncate max-w-[100px]">{web.title}</span>
+                    <span className="text-[10px] text-white font-mono">{web.score}</span>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Repositories */}
-            <div className="p-4 rounded-xl bg-[#080808] border border-[#515050] space-y-3">
-              <div className="flex items-center justify-between text-xs border-b border-[#515050] pb-2">
-                <span className="font-bold text-slate-200 flex items-center gap-1.5">
+            <div className="p-4 rounded-xl bg-[#09090B] border border-zinc-800 space-y-3">
+              <div className="flex items-center justify-between text-xs border-b border-zinc-800 pb-2">
+                <span className="font-bold text-zinc-200 flex items-center gap-1.5">
                   <GithubIcon className="w-3.5 h-3.5 text-white" /> GitHub Repos
                 </span>
-                <span className="text-[10px] text-[#8e8e8e] font-mono">3 Repos</span>
+                <span className="text-[10px] text-zinc-400 font-mono">3 Repos</span>
               </div>
               <div className="space-y-2">
                 {repositoriesParsed.map((repo, idx) => (
                   <div key={idx} className="text-[11px] flex items-center justify-between">
-                    <span className="text-slate-300 truncate max-w-25">{repo.name.split('/')[1]}</span>
-                    <span className="text-[10px] text-slate-400 font-mono">★ {repo.stars}</span>
+                    <span className="text-zinc-300 truncate max-w-[100px]">{repo.name.split('/')[1]}</span>
+                    <span className="text-[10px] text-zinc-400 font-mono">★ {repo.stars}</span>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Papers */}
-            <div className="p-4 rounded-xl bg-[#080808] border border-[#515050] space-y-3">
-              <div className="flex items-center justify-between text-xs border-b border-slate-800 pb-2">
-                <span className="font-bold text-slate-200 flex items-center gap-1.5">
+            <div className="p-4 rounded-xl bg-[#09090B] border border-zinc-800 space-y-3">
+              <div className="flex items-center justify-between text-xs border-b border-zinc-800 pb-2">
+                <span className="font-bold text-zinc-200 flex items-center gap-1.5">
                   <BookOpen className="w-3.5 h-3.5 text-white" /> ArXiv Papers
                 </span>
-                <span className="text-[10px] text-emerald-400 font-mono">3 Papers</span>
+                <span className="text-[10px] text-zinc-400 font-mono">3 Papers</span>
               </div>
               <div className="space-y-2">
                 {papersProcessed.map((paper, idx) => (
                   <div key={idx} className="text-[11px] flex items-center justify-between">
-                    <span className="text-slate-300 truncate max-w-25">{paper.title}</span>
-                    <span className="text-[10px] text-slate-400 font-mono">{paper.year}</span>
+                    <span className="text-zinc-300 truncate max-w-[100px]">{paper.title}</span>
+                    <span className="text-[10px] text-zinc-400 font-mono">{paper.year}</span>
                   </div>
                 ))}
               </div>
@@ -174,43 +167,35 @@ const LiveResearch = () => {
         </div>
 
         {/* RIGHT COLUMN: Terminal Log Feed */}
-        <div className="lg:col-span-5 flex flex-col h-125 bg-[#070707] border border-[#424141] rounded-[20px] p-4 shadow-2xl overflow-hidden font-mono text-xs">
-          <div className="flex items-center justify-between pb-3 border-b border-slate-800 mb-3">
+        <div className="lg:col-span-5 flex flex-col h-[500px] bg-[#09090B] border border-zinc-800 rounded-[20px] p-4 shadow-2xl overflow-hidden font-mono text-xs">
+          <div className="flex items-center justify-between pb-3 border-b border-zinc-800 mb-3">
             <span className="flex items-center gap-2 text-white font-bold">
               <Terminal className="w-4 h-4" /> Agent Telemetry Console
             </span>
             <div className="flex items-center gap-1.5">
-              <span className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
-              <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
-              <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
+              <span className="w-2.5 h-2.5 rounded-full bg-zinc-700" />
+              <span className="w-2.5 h-2.5 rounded-full bg-zinc-500" />
+              <span className="w-2.5 h-2.5 rounded-full bg-white" />
             </div>
           </div>
 
-          <div className="flex-1 overflow-y-auto space-y-2 text-slate-300 pr-2">
+          <div className="flex-1 overflow-y-auto space-y-2 text-zinc-300 pr-2">
             {consoleLogs.map((log, idx) => (
               <motion.div
                 key={idx}
                 initial={{ opacity: 0, x: -10 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.2 }}
-                className="leading-relaxed hover:bg-[#2c2b2b9b] p-1 rounded transition-colors"
+                className="leading-relaxed hover:bg-zinc-900 p-1 rounded transition-colors text-zinc-300"
               >
-                {log.includes('INFO') ? (
-                  <span className="text-blue-400">{log}</span>
-                ) : log.includes('PLANNER') ? (
-                  <span className="text-cyan-300">{log}</span>
-                ) : log.includes('REFLECTION') ? (
-                  <span className="text-emerald-400 font-semibold">{log}</span>
-                ) : (
-                  <span className="text-[#c2c0c0]">{log}</span>
-                )}
+                <span>{log}</span>
               </motion.div>
             ))}
           </div>
 
-          <div className="pt-3 border-t border-slate-800 flex items-center justify-between text-[11px] text-slate-500">
+          <div className="pt-3 border-t border-zinc-800 flex items-center justify-between text-[11px] text-zinc-500">
             <span>Status: Streaming Logs</span>
-            <span className="text-emerald-400 animate-pulse">● Live Telemetry</span>
+            <span className="text-white animate-pulse">● Live Telemetry</span>
           </div>
         </div>
       </div>
