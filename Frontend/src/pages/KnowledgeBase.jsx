@@ -67,7 +67,7 @@ const KnowledgeBase = () => {
       </div>
 
       {/* Filter Bar */}
-      <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-4 rounded-[16px] bg-[#18181B] border border-zinc-800">
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-4 rounded-2xl bg-[#18181B] border border-zinc-800">
         <div className="w-full sm:w-80">
           <Input
             icon={Search}

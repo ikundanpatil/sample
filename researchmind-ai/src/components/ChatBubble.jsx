@@ -17,7 +17,7 @@ const ChatBubble = ({ message }) => {
     <div className={`flex gap-3 md:gap-4 my-4 max-w-4xl ${isAi ? 'self-start' : 'self-end flex-row-reverse'}`}>
       {/* Avatar Icon */}
       <div
-        className={`w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md ${
+        className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 shadow-md ${
           isAi
             ? 'bg-white text-black border border-white font-bold'
             : 'bg-zinc-800 text-zinc-200 border border-zinc-700'
@@ -42,7 +42,7 @@ const ChatBubble = ({ message }) => {
 
         {/* Text Content Box */}
         <div
-          className={`p-4 md:p-5 rounded-[16px] text-sm leading-relaxed shadow-lg ${
+          className={`p-4 md:p-5 rounded-2xl text-sm leading-relaxed shadow-lg ${
             isAi
               ? 'bg-[#18181B] border border-zinc-800 text-zinc-100 rounded-tl-none'
               : 'bg-white text-black rounded-tr-none font-medium'
