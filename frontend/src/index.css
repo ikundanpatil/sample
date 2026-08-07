@@ -2,71 +2,61 @@
 
 @layer base {
   :root {
-    --color-primary: #3B82F6;
-    --color-accent: #06B6D4;
-    --color-bg: #0F172A;
-    --color-sidebar: #111827;
-    --color-cards: #1E293B;
-    --color-text-main: #F8FAFC;
-    --color-text-secondary: #94A3B8;
-    --color-border: rgba(255, 255, 255, 0.08);
-    --color-success: #22C55E;
+    --color-primary: #FFFFFF;
+    --color-accent: #FFFFFF;
+    --color-bg: #09090B;
+    --color-sidebar: #09090B;
+    --color-cards: #18181B;
+    --color-text-main: #FAFAFA;
+    --color-text-secondary: #A1A1AA;
+    --color-border: rgba(255, 255, 255, 0.12);
     --radius-main: 14px;
   }
 
   body {
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    background-color: var(--color-bg);
-    color: var(--color-text-main);
+    background-color: #09090B;
+    color: #FAFAFA;
   }
 }
 
-/* Custom Scrollbar */
+/* Custom Scrollbar - Monochrome */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #0F172A;
+  background: #09090B;
 }
 ::-webkit-scrollbar-thumb {
-  background: #334155;
+  background: #27272A;
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #475569;
+  background: #3F3F46;
 }
 
-/* Custom Glassmorphism & Utilities */
+/* Custom Panels & Glass Utilities - Monochrome Black & White */
 .glass-panel {
-  background: rgba(30, 41, 59, 0.7);
+  background: rgba(24, 24, 27, 0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .glass-card {
-  background: rgba(30, 41, 59, 0.85);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #18181B;
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 14px;
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.36);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.6);
 }
 
-.glow-blue {
-  box-shadow: 0 0 25px -5px rgba(59, 130, 246, 0.3);
-}
-
-.glow-cyan {
-  box-shadow: 0 0 25px -5px rgba(6, 182, 212, 0.3);
-}
-
-.glow-emerald {
-  box-shadow: 0 0 20px -5px rgba(34, 197, 94, 0.3);
+.glow-white {
+  box-shadow: 0 0 25px -5px rgba(255, 255, 255, 0.15);
 }
 
 .border-subtle {
-  border-color: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.12);
 }
 
 /* Pulse animation for node connectors */

@@ -14,7 +14,7 @@ const Button = ({
   ...props
 }) => {
   const baseStyles =
-    'inline-flex items-center justify-center font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-[#0F172A] disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer active:scale-[0.98]';
+    'inline-flex items-center justify-center font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-[#09090B] disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer active:scale-[0.98]';
 
   const sizeStyles = {
     sm: 'text-xs px-3 py-1.5 rounded-lg gap-1.5',
@@ -24,13 +24,13 @@ const Button = ({
 
   const variantStyles = {
     primary:
-      'bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white shadow-lg shadow-blue-500/20 focus:ring-cyan-500 border border-cyan-400/30',
+      'bg-white hover:bg-zinc-200 text-black border border-white font-semibold shadow-md focus:ring-white',
     secondary:
-      'bg-slate-800/90 hover:bg-slate-700 text-slate-200 border border-slate-700/60 hover:border-slate-500 focus:ring-slate-500',
+      'bg-zinc-900 hover:bg-zinc-800 text-zinc-100 border border-zinc-700 hover:border-zinc-500 focus:ring-zinc-500',
     danger:
-      'bg-red-500/10 hover:bg-red-500/20 text-red-400 border border-red-500/30 hover:border-red-500/50 focus:ring-red-500',
+      'bg-zinc-900 hover:bg-zinc-800 text-zinc-200 border border-zinc-700 hover:border-zinc-500 focus:ring-zinc-500',
     ghost:
-      'bg-transparent hover:bg-slate-800/60 text-slate-300 hover:text-white border border-transparent focus:ring-slate-500',
+      'bg-transparent hover:bg-zinc-800/80 text-zinc-300 hover:text-white border border-transparent focus:ring-zinc-500',
   };
 
   return (

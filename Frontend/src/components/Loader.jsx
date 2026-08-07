@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Cpu, Sparkles, Brain } from 'lucide-react';
+import { Brain, Sparkles } from 'lucide-react';
 
 const Loader = ({ text = 'Autonomous Agent Analyzing...', size = 'md' }) => {
   const containerSizes = {
@@ -16,38 +16,38 @@ const Loader = ({ text = 'Autonomous Agent Analyzing...', size = 'md' }) => {
         <motion.div
           animate={{ rotate: 360 }}
           transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
-          className="absolute inset-0 rounded-full border-2 border-dashed border-cyan-500/40"
+          className="absolute inset-0 rounded-full border-2 border-dashed border-zinc-700"
         />
 
         {/* Counter Rotating Orbit Ring 2 */}
         <motion.div
           animate={{ rotate: -360 }}
           transition={{ duration: 12, repeat: Infinity, ease: 'linear' }}
-          className="absolute inset-2 rounded-full border border-blue-500/30 border-t-cyan-400"
+          className="absolute inset-2 rounded-full border border-zinc-800 border-t-white"
         />
 
-        {/* Pulsing Glowing Center Circle */}
+        {/* Center Pulsing Circle */}
         <motion.div
           animate={{ scale: [0.9, 1.1, 0.9], opacity: [0.7, 1, 0.7] }}
           transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-          className="absolute inset-4 rounded-full bg-gradient-to-tr from-blue-600/30 via-cyan-500/20 to-emerald-500/20 backdrop-blur-md border border-cyan-400/50 shadow-[0_0_30px_rgba(6,182,212,0.4)] flex items-center justify-center"
+          className="absolute inset-4 rounded-full bg-zinc-900 border border-zinc-700 shadow-lg flex items-center justify-center"
         >
-          <Brain className="w-8 h-8 text-cyan-300 animate-pulse" />
+          <Brain className="w-8 h-8 text-white animate-pulse" />
         </motion.div>
 
-        {/* Orbiting Satellite Particle Nodes */}
+        {/* Orbiting Satellite Node */}
         <motion.div
           animate={{ rotate: 360 }}
           transition={{ duration: 4, repeat: Infinity, ease: 'linear' }}
           className="absolute inset-0 flex items-center justify-center"
         >
-          <div className="w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-[0_0_10px_#06b6d4] translate-x-10" />
+          <div className="w-2.5 h-2.5 rounded-full bg-white shadow-sm translate-x-10" />
         </motion.div>
       </div>
 
       {text && (
-        <div className="flex items-center gap-2 text-sm font-medium text-slate-300">
-          <Sparkles className="w-4 h-4 text-cyan-400 animate-bounce" />
+        <div className="flex items-center gap-2 text-sm font-medium text-zinc-300">
+          <Sparkles className="w-4 h-4 text-white animate-bounce" />
           <span>{text}</span>
         </div>
       )}

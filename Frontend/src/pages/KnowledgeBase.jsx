@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Database, Search, PlusCircle, Sparkles, Tag, Calendar, Layers, ShieldCheck, Code } from 'lucide-react';
+import { Database, Search, PlusCircle, Calendar } from 'lucide-react';
 import { useResearch } from '../context/ResearchContext';
 import Button from '../components/Button';
 import Input from '../components/Input';
@@ -55,8 +55,8 @@ const KnowledgeBase = () => {
               Long-Term Vector Memory (1536-dim)
             </Badge>
           </div>
-          <h1 className="text-2xl font-extrabold text-slate-100">Persistent Knowledge Base</h1>
-          <p className="text-xs text-slate-400">
+          <h1 className="text-2xl font-extrabold text-white">Persistent Knowledge Base</h1>
+          <p className="text-xs text-zinc-400">
             Semantic embeddings stored across autonomous agent reasoning runs.
           </p>
         </div>
@@ -67,7 +67,7 @@ const KnowledgeBase = () => {
       </div>
 
       {/* Filter Bar */}
-      <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-4 rounded-[16px] bg-[#1E293B]/70 border border-slate-700/80">
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-4 rounded-[16px] bg-[#18181B] border border-zinc-800">
         <div className="w-full sm:w-80">
           <Input
             icon={Search}
@@ -85,8 +85,8 @@ const KnowledgeBase = () => {
               onClick={() => setSelectedTag(tag)}
               className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
                 selectedTag === tag
-                  ? 'bg-gradient-to-r from-blue-600 to-cyan-500 text-white shadow-md'
-                  : 'bg-slate-800 text-slate-400 hover:text-slate-200'
+                  ? 'bg-white text-black font-bold shadow-md'
+                  : 'bg-zinc-900 text-zinc-400 border border-zinc-800 hover:text-white'
               }`}
             >
               {tag}
@@ -101,11 +101,11 @@ const KnowledgeBase = () => {
           <div
             key={item.id}
             onClick={() => setSelectedCard(item)}
-            className="p-5 rounded-[18px] bg-[#1E293B] border border-slate-700/80 hover:border-cyan-500/50 transition-all shadow-xl hover:shadow-cyan-500/10 flex flex-col justify-between gap-4 cursor-pointer group"
+            className="p-5 rounded-[18px] bg-[#18181B] border border-zinc-800 hover:border-zinc-500 transition-all shadow-xl flex flex-col justify-between gap-4 cursor-pointer group"
           >
             <div className="space-y-2">
               <div className="flex items-center justify-between">
-                <span className="text-[10px] font-mono text-cyan-400 px-2 py-0.5 rounded bg-cyan-500/10 border border-cyan-500/30">
+                <span className="text-[10px] font-mono text-zinc-300 px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">
                   {item.domain}
                 </span>
                 <Badge variant="success" size="sm">
@@ -113,26 +113,26 @@ const KnowledgeBase = () => {
                 </Badge>
               </div>
 
-              <h3 className="text-base font-bold text-slate-100 group-hover:text-cyan-300 transition-colors leading-snug">
+              <h3 className="text-base font-bold text-white group-hover:text-zinc-200 transition-colors leading-snug">
                 {item.title}
               </h3>
 
-              <p className="text-xs text-slate-400 leading-relaxed line-clamp-3">{item.description}</p>
+              <p className="text-xs text-zinc-400 leading-relaxed line-clamp-3">{item.description}</p>
             </div>
 
-            <div className="pt-3 border-t border-slate-800 space-y-2">
+            <div className="pt-3 border-t border-zinc-800 space-y-2">
               {/* Tags */}
               <div className="flex flex-wrap gap-1.5">
                 {item.tags.map((t, idx) => (
-                  <span key={idx} className="text-[10px] px-2 py-0.5 rounded-md bg-slate-800 text-slate-300 border border-slate-700/60">
+                  <span key={idx} className="text-[10px] px-2 py-0.5 rounded-md bg-zinc-900 text-zinc-300 border border-zinc-800">
                     #{t}
                   </span>
                 ))}
               </div>
 
-              <div className="flex items-center justify-between text-[11px] text-slate-500 font-mono">
+              <div className="flex items-center justify-between text-[11px] text-zinc-500 font-mono">
                 <span className="flex items-center gap-1">
-                  <Calendar className="w-3 h-3 text-slate-400" />
+                  <Calendar className="w-3 h-3 text-zinc-400" />
                   {item.createdDate}
                 </span>
                 <span>{item.tokens} Tokens</span>
@@ -205,14 +205,14 @@ const KnowledgeBase = () => {
               <Badge variant="cyan" glow>
                 Similarity: {selectedCard.similarityScore}
               </Badge>
-              <span className="text-slate-400 font-mono">Domain: {selectedCard.domain}</span>
+              <span className="text-zinc-400 font-mono">Domain: {selectedCard.domain}</span>
             </div>
 
-            <div className="p-4 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 leading-relaxed font-sans">
+            <div className="p-4 rounded-xl bg-[#09090B] border border-zinc-800 text-zinc-200 leading-relaxed font-sans">
               {selectedCard.description}
             </div>
 
-            <div className="p-3 rounded-xl bg-[#0F172A] border border-slate-800 font-mono text-[11px] text-cyan-300 space-y-1">
+            <div className="p-3 rounded-xl bg-black border border-zinc-800 font-mono text-[11px] text-zinc-300 space-y-1">
               <div>// Vector Embedding Dimensions: 1536-dim (HNSW Graph Index)</div>
               <div>// Hash: 0x8f7a99b24cd01...</div>
             </div>

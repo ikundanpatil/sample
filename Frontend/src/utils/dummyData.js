@@ -169,7 +169,7 @@ Key insights indicate a 400% increase in autonomous agent deployments across For
     },
     {
       heading: '3. Long-Term Vector Memory & Knowledge Graphs',
-      content: 'By pairing high-density embeddings (1536-dim) with semantic graph nodes, agents maintain persistent state across multi-day research tasks without losing context context constraints.',
+      content: 'By pairing high-density embeddings (1536-dim) with semantic graph nodes, agents maintain persistent state across multi-day research tasks without losing context constraints.',
     },
   ],
   comparisonTable: [
@@ -320,7 +320,7 @@ export const knowledgeItems = [
 export const userProfile = {
   name: 'Dr. Sarah Connor',
   email: 'sarah.connor@researchmind.ai',
-  avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=250',
+  avatar: null, // Profile photo removed in favor of monochrome icon logo
   role: 'Principal AI Researcher',
   organization: 'Cyberdyne AI Systems',
   stats: {
@@ -331,9 +331,9 @@ export const userProfile = {
     accuracyRating: '99.2%',
   },
   achievements: [
-    { title: 'Research Master', description: 'Completed over 100 deep autonomous research agent tasks', icon: 'Award', color: 'text-amber-400', date: 'Unlocked' },
-    { title: 'AI Explorer', description: 'Evaluated 50+ whitepapers and GitHub codebases', icon: 'Compass', color: 'text-cyan-400', date: 'Unlocked' },
-    { title: 'Knowledge Builder', description: 'Added 300+ vector memory embeddings to long-term database', icon: 'Database', color: 'text-emerald-400', date: 'Unlocked' },
-    { title: 'Reflection Guru', description: 'Achieved zero hallucinated citations across 50 consecutive runs', icon: 'CheckCircle2', color: 'text-blue-400', date: 'Unlocked' },
+    { title: 'Research Master', description: 'Completed over 100 deep autonomous research agent tasks', icon: 'Award', color: 'text-white', date: 'Unlocked' },
+    { title: 'AI Explorer', description: 'Evaluated 50+ whitepapers and GitHub codebases', icon: 'Compass', color: 'text-zinc-200', date: 'Unlocked' },
+    { title: 'Knowledge Builder', description: 'Added 300+ vector memory embeddings to long-term database', icon: 'Database', color: 'text-zinc-300', date: 'Unlocked' },
+    { title: 'Reflection Guru', description: 'Achieved zero hallucinated citations across 50 consecutive runs', icon: 'CheckCircle2', color: 'text-zinc-400', date: 'Unlocked' },
   ],
 };
